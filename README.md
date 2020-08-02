@@ -4,7 +4,7 @@ BDPA Triangle solution to the 2020 Problem Set
 
 Set up local dev environment:
 
-1. Make sure VS CODE is donwloaded on your machine
+1. Make sure VS CODE, Git BASH, and Node.JS is donwloaded on your machine
 2. Create a folder on your local machine, I named mine after the repository for easy tracking
 3. open the folder in VS code
 4. run the shortcut:  ctrl + `   <-- thats a back tick btw
