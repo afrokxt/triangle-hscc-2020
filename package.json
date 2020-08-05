@@ -18,5 +18,6 @@
   "homepage": "https://github.com/afrokxt/triangle-hscc-2020#readme",
   "devDependencies": {
     "prettier": "2.0.5"
-  }
+  },
+  "dependencies": {}
 }
