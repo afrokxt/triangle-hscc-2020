@@ -1,42 +1,16 @@
 <!DOCTYPE html>
 <head></head>
 <html lang="en">
-<link rel = "stylesheet" href = "style.css">
+<link rel = "stylesheet" href = "../styles/searchmenu.css">
 <title>Schedule A Flight</title>
-
-<style>
-    body{
-        background-color: white;
-    }
-    .autocomplete{
-        position: relative;
-        display: inline-block;
-    }
-    .bigtext{ 
-        font-size: 40px;
-    }
-    .button
-    {
-        
-    }
-    .flight
-    {
-        outline-width: 10px;
-    }
- 
-
-</style>
-
-
-<!-- variable that contains all of the countries for the plane flight autofill-->
-<script>var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua", "Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia","Turkey","Turkmenistan","Turks &amp; Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"]</script>
 
 <h1 class = "bigtext">
 Triangle Takeoff
 </h1>
 
 
-<form autocomplete = "off" action="/action_page.php">
+<div class = "form">
+<form autocomplete = "off" action="flightFilter()" style = "padding-bottom: 20px">
     <label for="origin">
         <span>Origin</span>
         <input type="text" id="origin" name = "origin" />
@@ -44,47 +18,58 @@ Triangle Takeoff
 
     <label for="destination">
         <span>Destination</span>
-        <input type="text" id="destination" name = "origin" />
+        <input type="text" id="destination" name = "destination" />
     </label>
     
-    <label for="destination">
+    <label for="airline">
         <span>Airline</span>
         <input type="text" id="airline" name = "airline" />
     </label>
-  <input type="button" onclick = "flightFilter" value="Filter" name = "filter">
+ <input type = "button" onclick = "flightFilter()" value="Filter" id = "filter" name = "filter"> </input>  
 </form>
 
-<div class = "flight">
-
-</div>
-
-
-
-<ul id="flightList">
-  <li><a href="#">Flight1</a></li>
-  <li><a href="#">Flight2</a></li>
-  <li><a href="#">Flight3</a></li>
-  <li><a href="#">Flight4</a></li>
-</ul>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 function flightFilter() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("flightList");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
+$(document).ready(function(){
+  $("#filter").on("click", function() {
+    var value = $(origin.text).val().toLowerCase();
+    $("#flightTable tr").filter(function() {
+      $(origin.text).toggle($(origin).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
 }
 </script>
+
+
+<table id = "flightTable" style="width:60%">
+    <tr>
+        <th>Origin</th>
+        <th>Destination</th>
+        <th>Airline</th>
+    </tr>
+    <tr>
+        <td>America</td>
+        <td>Japan</td>
+        <td>Delta</td>
+    </tr>
+    <tr>
+        <td>France</td>
+        <td>Mexico</td>
+        <td>Eurowings</td>
+    </tr>
+    <tr>
+        <td>Nigeria</td>
+        <td>Vietnam</td>
+        <td>Air Peace</td>
+    </tr>
+    <tr>
+        <td>America</td>
+        <td>Australia</td>
+        <td>JetBlue</td>
+    </tr>
+</table>
 
 
 </html>

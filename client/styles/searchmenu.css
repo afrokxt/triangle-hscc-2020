@@ -1,0 +1,30 @@
+body{
+    background-color: white;
+}
+.autocomplete{
+    position: relative;
+    display: inline-block;
+}
+.bigtext{ 
+    font-size: 40px;
+}
+
+.form
+{
+    outline-width:10px
+}
+.flight
+{
+    outline-width: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    
+}
+
+td, th{
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 5px;
+}
