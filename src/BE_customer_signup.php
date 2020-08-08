@@ -48,55 +48,55 @@ $missingCustomerField=$missingAdminField||empty($uid)||empty($dob)||empty($sex)|
 
 //Check if the button is set
 if (!isset($_POST['$registerBtn'])){
-    header("Location: reader_signup_FE.php?signup=in complete"); 
+    header("Location: ../client/templates/register.html?signup=unsetButton"); 
     exit();
 }
 else{
     //Checks if admin submitted all necessary information
     if(isAdminLoggedIn() && $missingAdminField){
-        header("Location: reader_signup_FE.php?signup=in complete"); 
+        header("Location: ../client/templates/register.html?signup=missingField"); 
         exit();
     }
     //Checks if customer submitted all necessary information
     else if($missingCustomerField){
-        header("Location: reader_signup_FE.php?signup=in complete"); 
+        header("Location: ../client/templates/register.html?signup=missingField");
         exit();
     }
     else{
         //Check if email is valid
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            header("Location: customer_register.php?signup=invalidemail");
+            header("Location: ../client/templates/register.html?signup=invaidEmail");
             exit();
         }
         else{
             //Check if password is secure
             if(strlen($pwd)<=10){
-                header("Location: customer_register.php?signup=invalidemail");
+                header("Location: ../client/templates/register.html?signup=insecurePwd");
                 exit();
             }
             else{
                 //Check if passwords match
                 if ($pwd!=$confirmPwd){
-                    header("Location: reader_signup_FE.php?signup=differentPwd");
+                    header("Location: ../client/templates/register.html?signup=confirmPwd");
                     exit();
                 }
                 else{
                     //Check if age is valid
                     $lowestDob=strtotime(1900-1-1);
                     if($dob<$lowestDob){
-                        header("Location: customer_register.php?signup=invalidemail");
+                        header("Location: ../client/templates/register.html?signup=invalidAge");
                         exit();
                     }
                     else{
                         //Check if the CAPTCHA is correct
                         if($captcha!="4"){
-                            header("Location: customer_register.php?signup=invalidemail");
+                            header("Location: customer_register.php?signup=CAPTCHAError");
                             exit();
                         }
                         else{
                             //Check if the privacy policy was accepted
                             if(!isset($_POST["privacy"])){
-                                header("Location: customer_register.php?signup=invalidemail");
+                                header("Location: customer_register.php?signup=privacyError");
                                 exit();
                             }
                             else{
@@ -104,6 +104,7 @@ else{
                                 //query the database against the username variable
                                 //if there is a match, redirect to register form
                                 //else hash the password with md5() and use a mysql insert to insert data into database. redirect to user dashboard
+                                header("Location: ../client/templates/index.php?signup=unsetButton;
                             }
                         }
                     }
