@@ -41,8 +41,8 @@ $newsletter=mysqli_real_escape_string($conn, $_POST["newsletter"]);
 $privacy=mysqli_real_escape_string($conn, $_POST["privacyPolicy"]);
 //card id
 
-$missingAdminField=empty($first)||empty($last)||empty($email)||empty(pwd)||empty($confirmPwd)||empty($captcha);
-$missingCustomerField=$missingAdminField||empty($uid)||empty($dob)||empty($sex)||empty($captcha)||empty($privacy)||empty($street)||empty($city)||empty($state)||empty($zip)||empty($country)||empty($sq1)||empty($sq2)||empty($sq3)||empty($sa1)||empty($sa2)||empty($sa3)
+$missingAdminField=empty($first)||empty($last)||empty($email)||empty($pwd)||empty($confirmPwd)||empty($captcha);
+$missingCustomerField=$missingAdminField||empty($uid)||empty($dob)||empty($sex)||empty($captcha)||empty($privacy)||empty($street)||empty($city)||empty($state)||empty($zip)||empty($country)||empty($sq1)||empty($sq2)||empty($sq3)||empty($sa1)||empty($sa2)||empty($sa3);
 
 //Signup Verification
 
