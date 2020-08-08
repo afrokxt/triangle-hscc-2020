@@ -6,32 +6,32 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <form action="#" class="Register-form">
+    <form action="../../src/BE_customer_signup.php" class="Register-form">
         <h2 class="title">Register</h2>
         <div class="Register-form">
-          <input type="text" id="fname" placeholder="First Name" />
+          <input name="firstName" type="text" id="fname" placeholder="First Name" />
         </div>
         <!-- First Name -->
             <input type="text" id="mname" placeholder="Middle Name" />
           <br>
           <!-- Middle Name -->
-            <input type="text" id="lname" placeholder="Last Name" />
+            <input name="middleName" type="text" id="lname" placeholder="Last Name" />
           <br>
           <!-- Last Name -->
-            <input type="text" id="Title" placeholder="Title" />
+            <input name="lastName" type="text" id="Title" placeholder="Title" />
           <br>
           <!-- Title -->
-            <input type="text" id="suffix" placeholder="Suffix" />
+            <input name="title" type="text" id="suffix" placeholder="Suffix" />
           <br>
           <!-- suffix -->
-          <input type="email" id="email" placeholder="Email" />
+          <input name="suffix" type="email" id="email" placeholder="Email" />
         <br>
         <!-- Email -->
         <div class="input-field"></div>
-          <input type="number" id="dob" placeholder="Date Of Birth" />
+          <input name="email" type="number" id="dob" placeholder="Date Of Birth" />
         <!-- DOB -->
         <div class="input-field"></div>
-          <select name="Sex" id="Sex">
+          <select name="sex" id="Sex">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="audi">Non-Binary</option>
@@ -40,18 +40,18 @@
         </div>
         <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Username" />
+            <input name="username" type="text" placeholder="Username" />
           </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
+          <input name="password" type="password" placeholder="Password" />
         </div>
         <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Confirm Password" />
+            <input name="confirmPwd" type="password" placeholder="Confirm Password" />
           </div>
         <input type="submit" class="btn" value="Register" />
     
-          <div id="button"><a href="index.html">Have an Account Already?</a></div>
+          <div id="button"><a href="login.html">Have an Account Already?</a></div>
 </body>
 </html>
