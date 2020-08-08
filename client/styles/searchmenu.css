@@ -11,11 +11,27 @@ body{
 
 .form
 {
+    font-size: 30px;
     outline-width:10px
 }
 .flight
 {
-    outline-width: 10px;
+    border-style: solid;
+    border-color: lightblue;
+    border-width: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px
+    
+}
+
+.flight-right{
+    text-align:right;
+   
+}
+
+.flight-left{
+    border-style: solid;
 }
 
 table {

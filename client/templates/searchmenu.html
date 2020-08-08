@@ -9,67 +9,65 @@ Triangle Takeoff
 </h1>
 
 
-<div class = "form">
+<div id = "inputForm">
 <form autocomplete = "off" action="flightFilter()" style = "padding-bottom: 20px">
     <label for="origin">
         <span>Origin</span>
-        <input type="text" id="origin" name = "origin" />
+        <input type="text" autocomplete="off" id="origin" placeholder="Select an Origin" name = "origin" style = "font-size:20px;"/>
     </label>
 
     <label for="destination">
         <span>Destination</span>
-        <input type="text" id="destination" name = "destination" />
+        <input type="text" id="destination" placeholder="Select a Destination" name = "destination" style = "font-size:20px;"/>
     </label>
-    
+     
     <label for="airline">
         <span>Airline</span>
-        <input type="text" id="airline" name = "airline" />
+        <input type="text" id="airline" placeholder="Select an Airline" name = "airlinte" style = "font-size:20px;"/>
     </label>
- <input type = "button" onclick = "flightFilter()" value="Filter" id = "filter" name = "filter"> </input>  
+
+    <label for="Time">
+        <span>Departure Time</span>
+        <input type="text" id="time" placeholder="Select a Time" name = "time" style = "font-size:20px;"/>
+    </label>
+
+    <label for="Price">
+        <span>Price</span>
+        <input type="text" id="price" placeholder="Select a Price" name = "price" style = "font-size:20px;"/>
+    </label>
+
+ <input type = "button" onclick = "flightFilter()" value="Filter" id = "filter" name = "filter" style = "font-size:20px;"> </input>  
 </form>
+  
+<div id = allFlights>
+    <div class = "flight" class = "JetBlue" class = "America" class = "Delayed" class = "240PM" class = "300dollars" style = "font-size: 30px">
+        <div class= "flight-left"> 
+            <p>2:40 PM <span>America</span></p>
+            <p>Delayed</p>
+        </div>
+        <div class = "flight-right">
+            <p>JetBlue</p>
+            <p>$300</p>
+        </div>
+    </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <div class = "flight" class = "DeltaAirlines" class = "Japan" class = "Delayed" class = "240PM" class = "300dollars" style = "font-size: 30px">
+        <div class= "flight-left"> 
+            <p>2:40 PM <span>Japan</span></p>
+             <p>On Schedule</p>
+        </div>
+        <div class = "flight-right">
+            <p>Delta Airlines</p>
+            <p>$240</p>
+        </div>
+    </div>
+</div>
+
 <script>
-function flightFilter() {
-$(document).ready(function(){
-  $("#filter").on("click", function() {
-    var value = $(origin.text).val().toLowerCase();
-    $("#flightTable tr").filter(function() {
-      $(origin.text).toggle($(origin).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-}
+var flight1 = {origin: "America", destination = "Japan", airline = "Delta"}
+
+
 </script>
-
-
-<table id = "flightTable" style="width:60%">
-    <tr>
-        <th>Origin</th>
-        <th>Destination</th>
-        <th>Airline</th>
-    </tr>
-    <tr>
-        <td>America</td>
-        <td>Japan</td>
-        <td>Delta</td>
-    </tr>
-    <tr>
-        <td>France</td>
-        <td>Mexico</td>
-        <td>Eurowings</td>
-    </tr>
-    <tr>
-        <td>Nigeria</td>
-        <td>Vietnam</td>
-        <td>Air Peace</td>
-    </tr>
-    <tr>
-        <td>America</td>
-        <td>Australia</td>
-        <td>JetBlue</td>
-    </tr>
-</table>
 
 
 </html>
