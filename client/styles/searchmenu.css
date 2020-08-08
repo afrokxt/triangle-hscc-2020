@@ -21,17 +21,28 @@ body{
     border-width: 10px;
     margin-bottom: 5px;
     margin-left: 10px;
-    margin-right: 10px
+    margin-right: 10px;
+    
     
 }
 
 .flight-right{
     text-align:right;
+    padding-right: 100px;
+    border-style: solid;
+    
    
 }
 
 .flight-left{
     border-style: solid;
+    border-right: 0px;
+    padding-left: 100px;
+    float: left;
+}
+
+.inputForm{
+    font-size: 30px;
 }
 
 table {
