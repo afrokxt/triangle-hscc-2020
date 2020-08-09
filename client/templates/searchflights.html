@@ -63,11 +63,11 @@
         </div>
         <div class="flight-right">
 
-          <button class="book-flight">Book Flight</button>
+          <button class="btn book-flight">Book Flight</button>
         </div>
         <script>
           let ids = []
-          let url = "https://airports.api.hscc.bdpa.org/v1/flights/with-ids?ids=" + query;
+          let url = "https://airports.api.hscc.bdpa.org/v1/flights/with-ids?ids=" + query + "";
           let flight = fetch(url);
           
         </script>
@@ -75,7 +75,7 @@
         <!-- your team only has to worry about booking tickets for flights where type=="departure" where landingAt -->
         <!-- The public flight view shows the following information for both arriving and departing flights:
 
-           tri9247b-4926-4145-93de-85c500480c93
+           
 
 Scheduled time to arrive/depart
 City the flight is arriving from/departing to (e.g. Los Angeles)
