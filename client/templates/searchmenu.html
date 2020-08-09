@@ -4,57 +4,89 @@
 <link rel = "stylesheet" href = "../styles/searchmenu.css">
 <title>Schedule A Flight</title>
 
+<!--Title of the Wwbsite-->
 <h1 class = "bigtext">
 Triangle Takeoff
 </h1>
 
-
+<!--Form for filtering what flights are shown-->
 <div id = "inputForm" class = "inputForm">
-<form autocomplete = "off" action="flightFilter()" style = "padding-bottom: 20px">
+<form action="flightFilter()" style = "padding-bottom: 20px" id = "flightForm" >
+
+    <!--user inputs flight origin to filter flights by selected origin-->
     <label for="origin">
         <span>Origin</span>
-        <input type="text" autocomplete="off" id="origin" placeholder="Select an Origin" name = "origin" style = "font-size:20px;"/>
+        <input type="text" list = "combo-origins" id="origin" placeholder="Select an Origin" name = "origin" style = "font-size:20px;" onchange="get_origin(this)"/>
+        <datalist id= "combo-origins">
+            <option value="America">America</option>
+            <option value="Japan">Japan</option>
     </label>
 
+    <!--user inputs flight destination to filter flights by selected destination-->
     <label for="destination">
         <span>Destination</span>
-        <input type="text" id="destination" placeholder="Select a Destination" name = "destination" style = "font-size:20px;"/>
+        <input type="text" list = "combo-destinations" id="destination" placeholder="Select a Destination" name = "destination" style = "font-size:20px;" onchange="get_destination(this)" />
+        <datalist id= "combo-destinations">
+            <!-- options for what destinations are available-->
+            <option value="France">France</option>
+            <option value="Germany">Germany</option>
     </label>
      
+    <!--user inputs flight airline to filter flights by selected airline -->
     <label for="airline">
         <span>Airline</span>
-        <input type="text" id="airline" placeholder="Select an Airline" name = "airlinte" style = "font-size:20px;"/>
+        <input type="text" list = "combo-airlines" id="airline" placeholder="Select an Airline" name = "airline" style = "font-size:20px;" onchange="get_airline(this)"/>
+        <datalist id= "combo-airlines">
+            <!-- options for what airlines are available-->
+            <option value="JetBlue">JetBlue</option>
+            <option value="Delta Airlines">Delta Airlines</option>
+        </datalist>
     </label>
 
-    <label for="Time">
+    <!--user inputs flight time to filter flights by selected time -->
+    <label for="departureTime">
         <span>Departure Time</span>
-        <input type="text" id="time" placeholder="Select a Time" name = "time" style = "font-size:20px;"/>
+        <input type="text" list = "combo-departureTimes" id="departureTime" placeholder="Select a Time" name = "departureTime" style = "font-size:20px;" onchange="get_departureTime(this)"/>
+        <datalist id= "combo-departureTimes">
+            <!-- options for what departure times are available-->
+            <option value="14:40">2:40PM</option>
+            <option value="15:00">3:00PM</option>
+        </datalist>
     </label>
 
-    <label for="Price">
+    <!--user inputs flight price to filter flights by selected price-->
+    <label for="price">
         <span>Price</span>
-        <input type="text" id="price" placeholder="Select a Price" name = "price" style = "font-size:20px;"/>
+        <input type="text" list = "combo-prices" id="price" placeholder="Select a Price" name = "price" style = "font-size:20px;" onchange="get_price(this)"/>
+        <datalist id= "combo-prices">
+            <!-- options for what prices are available-->
+            <option value="240">240</option>
+            <option value="300">300</option>
+        </datalist>
     </label>
 
-
- <input type = "button" onclick = "flightFilter()" value="Filter" id = "filter" name = "filter" style = "font-size:20px;"> </input>  
+    <!--Filters on click: filter function to be implemented-->
+<input type = "button" onclick = "flightFilter()" value="Filter" id = "filter" name = "filter" style = "font-size:20px;"> </input>  
 </form>
   
+
+<!--div that holds all flight divs; in each flight div is a flight-left and flight-right div, which contains what elements are on the left or on the right of the div, respectively-->
 <div id = allFlights>
-    <div class = "flight" class = "JetBlue" class = "America" class = "Delayed" class = "240PM" class = "300dollars" style = "font-size: 30px">
+    
+     <div class = "flight JetBlue America France Delayed 240PM 300dollars" style = "font-size: 30px">
         <div class= "flight-left"> 
-            <p>2:40 PM <span>America</span></p>
+            <p>2:40 PM <span>America to France</span></p>
             <p>Delayed</p>
         </div>
         <div class = "flight-right">
-            <p>JetBlue</p>
+            <p>JetBlue</p> 
             <p>$300</p>
         </div>
     </div>
 
-    <div class = "flight" class = "DeltaAirlines" class = "Japan" class = "Delayed" class = "240PM" class = "300dollars" style = "font-size: 30px">
+    <div class = "flight DeltaAirlines Japan Germany Delayed 350PM 300dollars" style = "font-size: 30px">
         <div class= "flight-left"> 
-            <p>2:40 PM <span>Japan</span></p>
+            <p>3:50 PM <span>Japan to Germany</span></p>
              <p>On Schedule</p>
         </div>
         <div class = "flight-right">
@@ -62,11 +94,100 @@ Triangle Takeoff
             <p>$240</p>
         </div>
     </div>
-</div>
 
+    
+
+
+</div>  
+
+
+<!--Each of these are scripts that limit user input in the combobox so that if they don't enter one of the given options their input is erased-->
 <script>
-var flight1 = {origin: "America", destination = "Japan", airline = "Delta"}
 
+get_airline = function(elem) {
+  var options = document.getElementById('combo-airlines').getElementsByTagName('option');
+  var optionVals = [],
+    i = 0;
+
+  for (i; i < options.length; i += 1) {
+    optionVals.push(options[i].value);
+  }
+
+  if (optionVals.indexOf(elem.value) > -1) {
+    console.log(elem.value);
+  }
+  else {
+    document.getElementById('airline').value = "";
+  }
+}
+
+get_origin = function(elem) {
+  var options = document.getElementById('combo-origins').getElementsByTagName('option');
+  var optionVals = [],
+    i = 0;
+
+  for (i; i < options.length; i += 1) {
+    optionVals.push(options[i].value);
+  }
+
+  if (optionVals.indexOf(elem.value) > -1) {
+    console.log(elem.value);
+  }
+  else {
+    document.getElementById('origin').value = "";
+  }
+}
+
+get_destination = function(elem) {
+  var options = document.getElementById('combo-destinations').getElementsByTagName('option');
+  var optionVals = [],
+    i = 0;
+
+  for (i; i < options.length; i += 1) {
+    optionVals.push(options[i].value);
+  }
+
+  if (optionVals.indexOf(elem.value) > -1) {
+    console.log(elem.value);
+  }
+  else {
+    document.getElementById('destination').value = "";
+  }
+}
+
+get_departureTime = function(elem) {
+  var options = document.getElementById('combo-departureTimes').getElementsByTagName('option');
+  var optionVals = [],
+    i = 0;
+
+  for (i; i < options.length; i += 1) {
+    optionVals.push(options[i].value);
+  }
+
+  if (optionVals.indexOf(elem.value) > -1) {
+    console.log(elem.value);
+  }
+  else {
+    document.getElementById('departureTime').value = "";
+  }
+}
+
+get_price = function(elem) {
+  var options = document.getElementById('combo-prices').getElementsByTagName('option');
+  var optionVals = [],
+    i = 0;
+
+  for (i; i < options.length; i += 1) {
+    optionVals.push(options[i].value);
+  }
+
+  if (optionVals.indexOf(elem.value) > -1) {
+    console.log(elem.value);
+  }
+  else {
+    document.getElementById('price').value = "";
+  }
+}
 
 </script>
 
