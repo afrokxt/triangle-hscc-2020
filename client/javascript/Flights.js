@@ -1,7 +1,9 @@
-
-const apiKey = 'tri9247b-4926-4145-93de-85c500480c93';
-
-let url = `https://airports.api.hscc.bdpa.org/v2/flights?match=${}`;
+import token from 'headers.api'
+const apiKey = token;
+console.log(apiKey);
+let paramsObj = { 'status': 'on time', 'status': 'scheduled'}
+let query = encodeURIComponent(JSON.stringify(paramsObj));
+let url = `https://airports.api.hscc.bdpa.org/v2/flights?match=${query}`;
 let allFlightsRequest = new XMLHttpRequest();
 
 allFlightsRequest.open("GET", url);
