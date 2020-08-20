@@ -46,11 +46,11 @@
 
   .nav-item a {
       text-decoration: none;
-      color: rgb(43, 43, 143);
+      color: #f04848;
       padding: 10px;
       border-radius: 4px;
   }
   .nav-item a:hover {
     color: rgb(234, 234, 245);
-    background-color: rgb(43, 43, 143);
+    background-color: #f04848;
 }
