@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(238, 230, 230);
+    
+}
+
+.form-input{
+width: 20%;
+margin-bottom: 5px;
+padding: 4px;
+}
+.formTitle{
+    font-size: 20px;
+}

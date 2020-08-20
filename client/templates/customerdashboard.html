@@ -1,0 +1,70 @@
+<!--Things to add: 
+Be able to change credit/debit cards
+See upcoming and past flights
+    Clicking on a flight will lead to that flight's ticket view
+    Date, time, and location of departure will be displayed for each flight
+Change default sorting order of flights in flight view
+Actually be able to change their information (add like a button to confirm that stuff or something)
+Choose default automatic logout time (15 minutes of inactivity, 30 minutes, 1 hour, etc.)
+source: https://github.com/nhscc/problem-statements/blob/master/2020/bdpa-airports-part-1.md (req. 5)
+-->
+
+<html lang="en">
+<link rel = "stylesheet" href = "../styles/dashboard.css">
+<head></head>
+<h2>User Dashboard</h2> 
+<div class="nameForm">
+    <h2 class = "formTitle">Change name</h2>
+    <!-- First Name -->
+    <input class="form-input" name="firstName" type="text" id="fname" placeholder="First Name" />
+    <br />
+    <!-- Middle Name -->
+    <input class="form-input" name = "middleName" type="text" id="mname" placeholder="Middle Name" />
+    <br />
+    <!-- Last Name -->
+    <input class="form-input" name="lastName" type="text" id="lname" placeholder="Last Name" />
+    <br />
+</div>
+<div class = "titleForm">
+    <h2 class = "formTitle">Change title</h2>
+    <!-- Title -->
+    <input class="form-input" name="title" type="text" id="Title" placeholder="Title" />
+    <br />
+    <!-- Suffix -->
+    <input class="form-input" name="suffix" type="text" id="suffix" placeholder="Suffix" />
+    <br />
+</div>
+    <!-- Email -->
+
+<div class = "emailForm">
+    <h2 class = "formTitle">Change email</h2>
+    <input class="form-input" name="email" type="email" id="email" placeholder="Email" />
+    <br />
+</div>
+
+<div class = "dobForm">
+    <!-- Change date of birth -->
+    <h2 class = "formTitle">Change date of birth</h2>
+    <div class="input-container">
+      <input class="form-input" name=dob type="number" id="dob" placeholder="Date Of Birth" />
+</div>
+</div>
+
+    <!-- Change gender -->
+    <div class="input-container">
+    <h2 class = "formTitle">Change gender</h2>
+      <select class="form-input" name="sex" id="Sex">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="audi">Non-Binary</option>
+        <option value="audi">Prefer Not to Resppnd</option>
+      </select>
+    </div>
+
+    <div class="input-field passwordForm">
+        <!-- <i class="fas fa-lock"></i> -->
+        <!-- Change password-->
+        <h2 class = "formTitle">Change password</h2>
+        <input name="password" type="password" placeholder="Password" class="form-input" />
+      </div>
+</html>
