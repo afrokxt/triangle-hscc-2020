@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/app.css" />
     <link rel="stylesheet" href="../styles/searchflights.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap-grid.css">
     <title>Flights Search | Triangle Takeoff</title>
   </head>
   <body>
@@ -52,29 +53,73 @@
     </section>
 
     <!-- SEARCH FLIGHTS LISTINGS -->
-    <section id="flights-list">
-      <h3>Flights </h3>
-      <article class="flight-container">
-        <div class="flight-left">
+    <section id="flights-list" class="fluid-container">
+      <h3 style="text-align: center;">Flights </h3>
+      <article class="container">
+        <div class="row flight-container">
+          <div class="flight-left col-8">
           <p class="flight-subtext">Arrive</p>
-          <p class="flight-time">7:00<span>am</span></p>
-          <p class="flight-subtext">Depart</p>
-          <p class="flight-time">8:00<span>pm</span></p>
+          <p class="flight-time time--arrive">7:00<span>am</span></p>
+          <p class="flight-subtext time--depart">Depart</p>
+          <p class="flight-time time--depart">8:00<span>pm</span></p>
         </div>
-        <div class="flight-right">
+        <div class="flight-right col-4">
 
-          <button class="btn book-flight">Book Flight</button>
+          <button class="btn book-flight" onclick="searchFlight()">Book Flight</button>
         </div>
-        <script>
-          let ids = []
-          let url = "https://airports.api.hscc.bdpa.org/v1/flights/with-ids?ids=" + query + "";
-          let flight = fetch(url);
+      </div>
+      <script type="module" src="../javascript/headers.api.js"></script>
+<script type="module" src="../javascript/Flights.js"></script>
+
+
+
+<!-- 
+<h2>The XMLHttpRequest Object</h2>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "demo_get2.asp?fname=Henry&lname=Ford", true);
+  xhttp.send();
+}
+</script>
+  -->
+
+        
+        <!-- 
+
+          myObj = { "name":"John", "age":30, "car":null };
+          for (x in myObj) {
+          document.getElementById("demo").innerHTML += x;
+          }       
+
+          var obj = { "name":"John", "age":30, "city":"New York"};
+          var myJSON = JSON.stringify(obj);
+          document.getElementById("demo").innerHTML = myJSON;
+
+
+          {
+    "success": "true",
+    // any other data you requested
+}
+{
+    "error": "an error message describing what went wrong",
+    // any other relevant data (like retryAfter)
+}
+          The public flight view shows the following information for both arriving and departing flights:
+
+
+
           
-        </script>
-
-        <!-- your team only has to worry about booking tickets for flights where type=="departure" where landingAt -->
-        <!-- The public flight view shows the following information for both arriving and departing flights:
-
            
 
 Scheduled time to arrive/depart
@@ -95,7 +140,7 @@ departed (finished boarding, left airport)
 If the flight is a departure:
 The latest gate information is also shown
 The name of the airport departing flights is departing to (e.g. CHI for BDPA Chicago Airport) -->
-
+<!-- your team only has to worry about booking tickets for flights where type=="departure" where landingAt -->
       </article>
 
     </section>

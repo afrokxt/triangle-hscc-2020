@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+/* NAV BAR */
+
+
 .nav {
     display: flex;  /*make stuff line up*/
     justify-content: space-around;
@@ -51,6 +54,6 @@
       border-radius: 4px;
   }
   .nav-item a:hover {
-    color: rgb(234, 234, 245);
+    color: #fff;
     background-color: #f04848;
 }
