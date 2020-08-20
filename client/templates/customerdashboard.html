@@ -7,6 +7,8 @@ Change default sorting order of flights in flight view
 Actually be able to change their information (add like a button to confirm that stuff or something)
 Choose default automatic logout time (15 minutes of inactivity, 30 minutes, 1 hour, etc.)
 source: https://github.com/nhscc/problem-statements/blob/master/2020/bdpa-airports-part-1.md (req. 5)
+Also, I was in the process of changing these individual divs to having forms in them as well so you could have buttons that submit, like
+what we have in the Change Name section, so if you want to apply that to the rest of them that'd be neat, or if you have another way do whichever you like
 -->
 
 <html lang="en">
@@ -15,20 +17,21 @@ source: https://github.com/nhscc/problem-statements/blob/master/2020/bdpa-airpor
 <h2>User Dashboard</h2> 
 <div class="nameForm">
     <h2 class = "formTitle">Change name</h2>
-    <!-- First Name -->
-    <input class="form-input" name="firstName" type="text" id="fname" placeholder="First Name" />
-    <br />
-    <!-- Middle Name -->
-    <input class="form-input" name = "middleName" type="text" id="mname" placeholder="Middle Name" />
-    <br />
-    <!-- Last Name -->
-    <input class="form-input" name="lastName" type="text" id="lname" placeholder="Last Name" />
-    <br />
+    <form action="/action_page.php" method="get" id="nameForm">
+        <input class="form-input" name="firstName" type="text" id="fname" placeholder="First Name" />
+        <br />
+        <!-- Middle Name -->
+        <input class="form-input" name = "middleName" type="text" id="mname" placeholder="Middle Name" />
+        <br />
+        <!-- Last Name -->
+        <input class="form-input" name="lastName" type="text" id="lname" placeholder="Last Name" />
+        <br />
+      </form>
 </div>
 <div class = "titleForm">
     <h2 class = "formTitle">Change title</h2>
     <!-- Title -->
-    <input class="form-input" name="title" type="text" id="Title" placeholder="Title" />
+    <input class="form-input" name="title" type="text" id="title" placeholder="Title" />
     <br />
     <!-- Suffix -->
     <input class="form-input" name="suffix" type="text" id="suffix" placeholder="Suffix" />
@@ -53,7 +56,7 @@ source: https://github.com/nhscc/problem-statements/blob/master/2020/bdpa-airpor
     <!-- Change gender -->
     <div class="input-container">
     <h2 class = "formTitle">Change gender</h2>
-      <select class="form-input" name="sex" id="Sex">
+      <select class="form-input" name="sex" id="sex">
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="audi">Non-Binary</option>
