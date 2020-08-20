@@ -5,28 +5,44 @@
     <title>Document</title>
     <link rel="stylesheet" href="../styles/form.css">
     <link rel="stylesheet" href="../styles/app.css">
-
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
   </head>
   <body>
-      <br>
+    <div class="form-container container">
       <h2 class="title">Login</h2>
-      <br>
-      <div class="login">
-      <input type="text" name="email" id="email" placeholder="Email" />
-      </div>
-      <br>
-      <div class="password">
-      <input type="password" name="password" id="password" placeholder="Password" />
-      </div>
-      <br>
-      <!--Login Button -->
-      <input type="submit" value="Login" class="btn solid" />
-      <!--Register Link -->
-     <div id="button"><a href="register.html">Need an Account?</a></div>
+      <form class="row" action="../../src/BE_customer_signup.php" id="login">
+        
+        <div class="col"></div>
+  
+        <div class="register-form col-9">
 
+          <!-- Email -->
+          <div class="input-container">
+            <input class="form-input" name="email" type="email" id="email" placeholder="Email" />
+          </div>
+       
+         
+          <div class="input-field">
+            <!-- <i class="fas fa-lock"></i> -->
+            <input name="password" type="password" placeholder="Password" class="form-input" />
+          </div>
+         
+          <div class="input-container row">
+            <div class="col"></div>
+            <button name = "loginBtn" class="form-button col-2" type="submit" value="Register">
+              Login
+            </button>
+            <div class="col"></div>
+          </div>
+          <div id="have-account-link">
+            <a class="form-link" href="register.html">Don't have an account? Register here!</a>
+          </div>
+        </div>
+        <div class="col"></div>
+      </form>
+    </div>
 
-
-
+<!-- fix email and DOB in the register tab too-->
 
 
   </body>

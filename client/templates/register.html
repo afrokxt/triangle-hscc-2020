@@ -1,120 +1,79 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/form.css" />
-    <link rel="stylesheet" href="../styles/app.css" />
-  </head>
-  <body>
-    <div class="form-container">
-      <form action="../../src/BE_customer_signup.php" id="register">
-        <h2 class="title">Register</h2>
-        <div class="register-form">
-          <input
-            class="form-input"
-            name="firstName"
-            type="text"
-            id="fname"
-            placeholder="First Name"
-          />
 
-          <!-- First Name -->
-          <input
-            class="form-input"
-            type="text"
-            id="mname"
-            placeholder="Middle Name"
-          />
-          <br />
-          <!-- Middle Name -->
-          <input
-            class="form-input"
-            name="middleName"
-            type="text"
-            id="lname"
-            placeholder="Last Name"
-          />
-          <br />
-          <!-- Last Name -->
-          <input
-            class="form-input"
-            name="lastName"
-            type="text"
-            id="Title"
-            placeholder="Title"
-          />
-          <br />
-          <!-- Title -->
-          <input
-            class="form-input"
-            name="title"
-            type="text"
-            id="suffix"
-            placeholder="Suffix"
-          />
-          <br />
-          <!-- suffix -->
-          <input
-            class="form-input"
-            name="suffix"
-            type="email"
-            id="email"
-            placeholder="Email"
-          />
-          <br />
-          <!-- Email -->
-          <div class="input-container">
-            <input
-              class="form-input"
-              name="email"
-              type="number"
-              id="dob"
-              placeholder="Date Of Birth"
-            />
-          </div>
-          <!-- DOB -->
-          <div class="input-container">
-            <select name="sex" id="Sex">
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="audi">Non-Binary</option>
-              <option value="audi">Prefer Not to Resppnd</option>
-            </select>
-          </div>
-          <div class="input-container">
-            <!-- <i class="fas fa-user"></i> -->
-            <input
-              class="form-input"
-              name="username"
-              type="text"
-              placeholder="Username"
-            />
-          </div>
-          <div class="input-field">
-            <!-- <i class="fas fa-lock"></i> -->
-            <input name="password" type="password" placeholder="Password" />
-          </div>
-          <div class="input-field">
-            <!-- <i class="fas fa-lock"></i> -->
-            <input
-              name="confirmPwd"
-              type="password"
-              placeholder="Confirm Password"
-            />
-          </div>
-          <input
-            class="btn form-btn"
-            type="submit"
-            class="btn"
-            value="Register"
-          />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="../styles/form.css" />
+  <link rel="stylesheet" href="../styles/app.css" />
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+</head>
 
-          <div class="form-link" id="have-account-link">
-            <a href="login.html">Have an Account Already?</a>
-          </div>
+<body>
+  <div class="form-container container">
+    <h2 class="title">Register</h2>
+    <form class="row" action="../../src/BE_customer_signup.php" id="register">
+      
+      <div class="col"></div>
+
+      <div class="register-form col-9">
+        
+        <input class="form-input" name="firstName" type="text" id="fname" placeholder="First Name" />
+
+        <!-- First Name -->
+        <input class="form-input" type="text" id="mname" placeholder="Middle Name" />
+        <br />
+        <!-- Middle Name -->
+        <input class="form-input" name="middleName" type="text" id="lname" placeholder="Last Name" />
+        <br />
+        <!-- Last Name -->
+        <input class="form-input" name="lastName" type="text" id="Title" placeholder="Title" />
+        <br />
+        <!-- Title -->
+        <input class="form-input" name="title" type="text" id="suffix" placeholder="Suffix" />
+        <br />
+        <!-- suffix -->
+        <input class="form-input" name="suffix" type="email" id="email" placeholder="Email" />
+        <br />
+        <!-- Email -->
+        <div class="input-container">
+          <input class="form-input" name="email" type="number" id="dob" placeholder="Date Of Birth" />
         </div>
-      </form>
-    </div>
-  </body>
+        <!-- DOB -->
+        <div class="input-container">
+          <select class="form-input" name="sex" id="Sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="audi">Non-Binary</option>
+            <option value="audi">Prefer Not to Resppnd</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <!-- <i class="fas fa-user"></i> -->
+          <input class="form-input" name="username" type="text" placeholder="Username" />
+        </div>
+        <div class="input-field">
+          <!-- <i class="fas fa-lock"></i> -->
+          <input name="password" type="password" placeholder="Password" class="form-input" />
+        </div>
+        <div class="input-field">
+          <!-- <i class="fas fa-lock"></i> -->
+          <input name="confirmPwd" type="password" placeholder="Confirm Password" class="form-input" />
+        </div>
+        <div class="input-container row">
+          <div class="col"></div>
+          <button name = "registerBtn" class="form-button col-2" type="submit" value="Register">
+            Register
+          </button>
+          <div class="col"></div>
+        </div>
+        <div id="have-account-link">
+          <a class = "form-link" href="login.html">Have an account already?</a>
+        </div>
+      </div>
+      <div class="col"></div>
+    </form>
+  </div>
+</body>
+
 </html>
