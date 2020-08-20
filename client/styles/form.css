@@ -1,3 +1,42 @@
+* {
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* FORM GENERAL STYLINGS */
+form {
+  
+}
+.register-form {
+
+}
+.input-container {
+
+}
+.form-input {
+
+}
+.form-link {
+
+}
+.btn {
+
+}
+.form-btn {
+
+}
+
+
+/* FORM SPECIFIC STYLINGS */
+
+
+
+
+
+
+
+
 /* body{
   font-family: 'Open Sans', sans-serif;
   background:white;
