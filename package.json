@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/afrokxt/triangle-hscc-2020#readme",
   "devDependencies": {
+    "bootstrap": "^4.5.2",
     "prettier": "2.0.5"
   },
   "dependencies": {}

@@ -1,4 +1,43 @@
-body{
+* {
+  font-size: 18px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* FORM GENERAL STYLINGS */
+form {
+  
+}
+.register-form {
+
+}
+.input-container {
+
+}
+.form-input {
+
+}
+.form-link {
+
+}
+.btn {
+
+}
+.form-btn {
+
+}
+
+
+/* FORM SPECIFIC STYLINGS */
+
+
+
+
+
+
+
+
+/* body{
   font-family: 'Open Sans', sans-serif;
   background:white;
   margin: 0 auto 0 auto;  
@@ -9,7 +48,11 @@ body{
 
 h2{
   font-size:1.5em;
+<<<<<<< HEAD:client/styles/style.css
   color:rgb(44, 44, 233);
+=======
+  color:rgb(43, 43, 143);
+>>>>>>> ayubi-front-end:client/styles/form.css
 }
 .email{
   background:#ecf0f1;
@@ -62,4 +105,4 @@ h2{
 @media{
 
 
-}
+} */

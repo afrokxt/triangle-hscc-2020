@@ -1,59 +1,120 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Triangle Takeoff</title>
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/app.css">
-
-</head>
-<body>
-    <form action="../../src/BE_customer_signup.php" class="Register-form">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/form.css" />
+    <link rel="stylesheet" href="../styles/app.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <form action="../../src/BE_customer_signup.php" id="register">
         <h2 class="title">Register</h2>
-        <div class="Register-form">
-          <input name="firstName" type="text" id="fname" placeholder="First Name" />
-        </div>
-        <!-- First Name -->
-            <input type="text" id="mname" placeholder="Middle Name" />
-          <br>
+        <div class="register-form">
+          <input
+            class="form-input"
+            name="firstName"
+            type="text"
+            id="fname"
+            placeholder="First Name"
+          />
+
+          <!-- First Name -->
+          <input
+            class="form-input"
+            type="text"
+            id="mname"
+            placeholder="Middle Name"
+          />
+          <br />
           <!-- Middle Name -->
-            <input name="middleName" type="text" id="lname" placeholder="Last Name" />
-          <br>
+          <input
+            class="form-input"
+            name="middleName"
+            type="text"
+            id="lname"
+            placeholder="Last Name"
+          />
+          <br />
           <!-- Last Name -->
-            <input name="lastName" type="text" id="Title" placeholder="Title" />
-          <br>
+          <input
+            class="form-input"
+            name="lastName"
+            type="text"
+            id="Title"
+            placeholder="Title"
+          />
+          <br />
           <!-- Title -->
-            <input name="title" type="text" id="suffix" placeholder="Suffix" />
-          <br>
+          <input
+            class="form-input"
+            name="title"
+            type="text"
+            id="suffix"
+            placeholder="Suffix"
+          />
+          <br />
           <!-- suffix -->
-          <input name="suffix" type="email" id="email" placeholder="Email" />
-        <br>
-        <!-- Email -->
-        <div class="input-field"></div>
-          <input name="email" type="number" id="dob" placeholder="Date Of Birth" />
-        <!-- DOB -->
-        <div class="input-field"></div>
-          <select name="sex" id="Sex">
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="audi">Non-Binary</option>
-            <option value="audi">Prefer Not to Resppnd</option>
-           </select>
-        </div>
-        <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input name="username" type="text" placeholder="Username" />
+          <input
+            class="form-input"
+            name="suffix"
+            type="email"
+            id="email"
+            placeholder="Email"
+          />
+          <br />
+          <!-- Email -->
+          <div class="input-container">
+            <input
+              class="form-input"
+              name="email"
+              type="number"
+              id="dob"
+              placeholder="Date Of Birth"
+            />
           </div>
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input name="password" type="password" placeholder="Password" />
-        </div>
-        <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input name="confirmPwd" type="password" placeholder="Confirm Password" />
+          <!-- DOB -->
+          <div class="input-container">
+            <select name="sex" id="Sex">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="audi">Non-Binary</option>
+              <option value="audi">Prefer Not to Resppnd</option>
+            </select>
           </div>
-        <input type="submit" class="btn" value="Register" />
-    
-          <div id="button"><a href="login.html">Have an Account Already?</a></div>
-</body>
+          <div class="input-container">
+            <!-- <i class="fas fa-user"></i> -->
+            <input
+              class="form-input"
+              name="username"
+              type="text"
+              placeholder="Username"
+            />
+          </div>
+          <div class="input-field">
+            <!-- <i class="fas fa-lock"></i> -->
+            <input name="password" type="password" placeholder="Password" />
+          </div>
+          <div class="input-field">
+            <!-- <i class="fas fa-lock"></i> -->
+            <input
+              name="confirmPwd"
+              type="password"
+              placeholder="Confirm Password"
+            />
+          </div>
+          <input
+            class="btn form-btn"
+            type="submit"
+            class="btn"
+            value="Register"
+          />
+
+          <div class="form-link" id="have-account-link">
+            <a href="login.html">Have an Account Already?</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

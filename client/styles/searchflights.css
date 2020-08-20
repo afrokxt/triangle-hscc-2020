@@ -1,0 +1,11 @@
+.flight-subtext {
+    font-size: 12px;
+    padding: 0px;
+    margin: 1px;
+    display: block;
+    color: gray;
+}
+
+.flight-left {
+    display: flex;
+}
